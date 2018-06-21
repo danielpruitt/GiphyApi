@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie GIFS</title>
+</head>
+<body>
+    <!-- header container -->
+    <div>
+        <h2>Click a button to find GIFS for a movie. Or you can search to find your GIF!</h2>
+        <h4>Click the image to see the full GIF</h4>
+    </div>
+
+    <!-- movie buttons container -->
+    <div>
+        <div id="buttonsView"></div>
+        <br>
+        <br>
+        <form id ="movieForm">
+            <label for="movieInput">Type here to search any movie!</label>
+            <input type="text" id="movieInput"><br>
+            <!-- button that triggers a new movie submisspion -->
+            <input id="addMovie" type="submit" value="Get Your GIFS Here!">
+        </form>
+
+    </div>
+
+    <!-- print movies into this container -->
+    <div id="gifZone">
+
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascript/logic.js"></script>
+</body>
+</html>
