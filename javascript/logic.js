@@ -18,28 +18,44 @@ function displayGif(){
                 var rating = results[j].rating
                 var p = $("<p>").text("Rating: " + rating);
                 var movieImage=$("<img>");
+                movieImage.attr("data-still",results[j].images.fixed_height_still.url);
+                movieImage.attr("data-animate",results[j].images.fixed_height.url);
                 movieImage.attr( "src", results[j].images.fixed_height_still.url);
-                // movieImage.attr("src",results[j].images.fixed_height.url, "data-animate")
+                movieImage.attr("data-state","still")
+                movieImage.attr("class","play")
+               
+                // movieImage.attr("src", results[j].images.fixed_height.url)
                 gifDiv.prepend(p);
                 gifDiv.prepend(movieImage)
+                
+                $('.play').on("click", function(){
+                    var state = $(movieImage).attr("data-state");
+                    if(state === "still"){
+                        $(this).attr("src", $(this).attr("data-animate"));
+                        $(this).attr("data-state", "animate");
+                    } else {
+                        $(this).attr("src", $(this).attr("data-still"));
+                        $(this).attr("data-state", "still");
+                    }
+                })
 
                 $("#gifZone").prepend(gifDiv)
-
+                
             };
         });
     };
 
     //click to animate
-    $("img").on("click", function(){
-       var state = $(this).attr("data-state");
-        if(state === "still"){
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-          } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-          }
-    })
+    // $('img').on("click", function(){
+    //     var state = $(this).attr("data-state");
+    //     if(state === "still"){
+    //         $(this).attr("src", results[j].images.fixed_height_still.url);
+    //         $(this).attr("data-state", "animate");
+    //     } else {
+    //         $(this).attr("src", results[j].images.fixed_height.url);
+    //         $(this).attr("data-state", "still");
+    //     }
+    // })
 
 // buttons!
 function makeButtons(){
