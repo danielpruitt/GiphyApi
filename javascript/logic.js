@@ -50,18 +50,6 @@ function displayGif(){
         });
     };
 
-    //click to animate
-    // $('img').on("click", function(){
-    //     var state = $(this).attr("data-state");
-    //     if(state === "still"){
-    //         $(this).attr("src", results[j].images.fixed_height_still.url);
-    //         $(this).attr("data-state", "animate");
-    //     } else {
-    //         $(this).attr("src", results[j].images.fixed_height.url);
-    //         $(this).attr("data-state", "still");
-    //     }
-    // })
-
 // buttons!
 function makeButtons(){
     $("#buttonsView").empty();
@@ -74,6 +62,7 @@ function makeButtons(){
         a.text(topics[i]);
         $("#buttonsView").append(a);
         console.log("a= " + a)
+        
     };
 
 };
@@ -85,6 +74,9 @@ $("#addMovie").on("click", function (event){
     var movie =$("#movieInput").val().trim();
     topics.push(movie);
     console.log("movie: " + movie);
+    $("#movieInput").val(" ")
+    
+
 
     makeButtons();
 });
