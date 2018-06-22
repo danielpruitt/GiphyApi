@@ -5,8 +5,8 @@ console.log(topics);
 function displayGif(){
     var searchedMovie = $(this).attr("data-name");
     console.log(searchedMovie)
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchedMovie +"&api_key=luw3u3zmYLsaHCqc9RU0lS8ePO5wmiAI";
-
+    
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=luw3u3zmYLsaHCqc9RU0lS8ePO5wmiAI&q="+ searchedMovie +"&limit=10&offset=0&rating=G&lang=en"
     $.ajax({
         url:queryURL,
         method:"GET"
@@ -21,27 +21,32 @@ function displayGif(){
                 movieImage.attr("data-still",results[j].images.fixed_height_still.url);
                 movieImage.attr("data-animate",results[j].images.fixed_height.url);
                 movieImage.attr( "src", results[j].images.fixed_height_still.url);
-                movieImage.attr("data-state","still")
-                movieImage.attr("class","play")
+                movieImage.attr("data-state","still");
+                movieImage.addClass("play",);
+                movieImage.addClass("card blue-grey darken-1")
                
-                // movieImage.attr("src", results[j].images.fixed_height.url)
+        
                 gifDiv.prepend(p);
                 gifDiv.prepend(movieImage)
                 
-                $('.play').on("click", function(){
-                    var state = $(movieImage).attr("data-state");
-                    if(state === "still"){
-                        $(this).attr("src", $(this).attr("data-animate"));
-                        $(this).attr("data-state", "animate");
-                    } else {
-                        $(this).attr("src", $(this).attr("data-still"));
-                        $(this).attr("data-state", "still");
-                    }
-                })
 
                 $("#gifZone").prepend(gifDiv)
                 
             };
+
+            
+            $('.play').on("click", function(){
+                console.log("test")
+                var state = $(this).attr("data-state");
+                if(state === "still"){
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+            })
+
         });
     };
 
@@ -64,6 +69,7 @@ function makeButtons(){
     for (var i = 0; i < topics.length; i++){
         var a = $("<button>");
         a.addClass("movie");
+        a.addClass("btn waves-effect waves-light btn-small blue-grey")
         a.attr("data-name",topics[i]);
         a.text(topics[i]);
         $("#buttonsView").append(a);

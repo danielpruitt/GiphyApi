@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Movie GIFS</title>
 </head>
 <body>
-    <!-- header container -->
-    <div>
-        <h2>Click a button to find GIFS for a movie. Or you can search to find your GIF!</h2>
-        <h4>Click the image to see the full GIF</h4>
-    </div>
+    <nav class="nav-wrapper changeNav"><!-- header container -->
 
-    <!-- movie buttons container -->
-    <div>
-        <div id="buttonsView"></div>
-        <br>
-        <br>
+        <h2>Moving Pictures</h2>
+    
+    </nav>  
+    <!-- searchbar container -->
+    <div class="container">
         <form id ="movieForm">
-            <label for="movieInput">Type here to search any movie!</label>
-            <input type="text" id="movieInput"><br>
-            <!-- button that triggers a new movie submisspion -->
-            <input id="addMovie" type="submit" value="Get Your GIFS Here!">
+            <div>
+                <label for="movieInput" class="label-icon blue-grey lighten-1" for="search"><h5>Type here to search any movie!</h5></label>
+                <input type="text" id="movieInput">
+                <input id="addMovie" type="submit" value="Get Your GIFS Here!" class="btn waves-effect waves-light blue-grey material-icons left">
+            </div>
         </form>
 
     </div>
 
+
+    <br>
+    <br>
+    <br>
+
+    <!-- buttons -->
+    <div class="container">
+        <div id="buttonsView"></div>
+    </div>
+
     <!-- print movies into this container -->
-    <div id="gifZone">
+    <div id="gifZone" class="container">
 
     </div>
 

@@ -1,0 +1,17 @@
+body {
+    background: url(./images/cartographer.png)
+}
+
+.changeNav {
+    background-color:#607d8b
+}
+
+input{
+    color:whitesmoke;
+}
+.item {
+    float:left;
+    margin:10px;
+    background-color: #607d8b;
+    color:#eceff1
+}
