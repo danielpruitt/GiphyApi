@@ -15,8 +15,11 @@ function displayGif(){
             var results = response.data;
             for (var j=0; j < results.length; j++) {
                 var gifDiv = $("<div class='item'>");
-                var rating = results[j].rating
+                var rating = results[j].rating;
+                var bit = results[j].bitly_gif_url;
                 var p = $("<p>").text("Rating: " + rating);
+                var link = $("<a>").text(bit);
+                link.attr("href", results[j].bitly_gif_url);
                 var movieImage=$("<img>");
                 movieImage.attr("data-still",results[j].images.fixed_height_still.url);
                 movieImage.attr("data-animate",results[j].images.fixed_height.url);
@@ -25,12 +28,11 @@ function displayGif(){
                 movieImage.addClass("play",);
                 movieImage.addClass("card blue-grey darken-1")
                
-        
+                gifDiv.prepend(link);
                 gifDiv.prepend(p);
-                gifDiv.prepend(movieImage)
+                gifDiv.prepend(movieImage);
                 
-
-                $("#gifZone").prepend(gifDiv)
+                $("#gifZone").prepend(gifDiv);
                 
             };
 

@@ -10,18 +10,20 @@
     <title>Movie GIFS</title>
 </head>
 <body>
-    <nav class="nav-wrapper changeNav"><!-- header container -->
+    <div>
+        <nav class="nav-wrapper changeNav">
 
-        <h2>Moving Pictures</h2>
-    
-    </nav>  
+            <h3 class="center-align col s12 m6" >Moving Pictures</h3>
+        
+        </nav>
+    </div>  
     <!-- searchbar container -->
     <div class="container">
         <form id ="movieForm">
-            <div>
-                <label for="movieInput" class="label-icon blue-grey lighten-1" for="search"><h5>Type here to search any movie!</h5></label>
-                <input type="text" id="movieInput">
-                <input id="addMovie" type="submit" value="Get Your GIFS Here!" class="btn waves-effect waves-light blue-grey material-icons left">
+            <div class ="row">
+                <label for="movieInput" class="label-icon blue-grey lighten-1 center-align" for="search"><h5>Type here to search any movie!</h5></label>
+                <input type="text" id="movieInput" class="center-align">
+                <input id="addMovie" type="submit" value="Add your GIFs here!" class="btn waves-effect waves-light blue-grey pulse left col s12 m12 l12 center-align">
             </div>
         </form>
 
