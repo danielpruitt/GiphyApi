@@ -1,10 +1,10 @@
 body {
-    background: url(./images/cartographer.png);
+    background: url(./images/cloth_alike.png);
     font-family: 'Aldrich', sans-serif;
 }
 
 .changeNav {
-    background-color:#607d8b;
+    background-color:#263238;
 
 }
 h2{
@@ -14,10 +14,13 @@ input,h4{
     color:#9e9e9e;
     
 }
+button{
+    margin:5px
+}
 .item {
     float:left;
     margin:10px;
-    background-color: #607d8b;
+    background-color: #263238;
     color:#eceff1
 }
 

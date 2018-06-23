@@ -20,13 +20,15 @@ function displayGif(){
                 var p = $("<p>").text("Rating: " + rating);
                 var link = $("<a>").text(bit);
                 link.attr("href", results[j].bitly_gif_url);
+                link.text("Get GIF here!")
+                link.attr("target", "blank")
                 var movieImage=$("<img>");
                 movieImage.attr("data-still",results[j].images.fixed_height_still.url);
                 movieImage.attr("data-animate",results[j].images.fixed_height.url);
                 movieImage.attr( "src", results[j].images.fixed_height_still.url);
                 movieImage.attr("data-state","still");
                 movieImage.addClass("play",);
-                movieImage.addClass("card blue-grey darken-1")
+                movieImage.addClass("card blue-grey darken-4")
                
                 gifDiv.prepend(link);
                 gifDiv.prepend(p);
@@ -59,7 +61,7 @@ function makeButtons(){
     for (var i = 0; i < topics.length; i++){
         var a = $("<button>");
         a.addClass("movie");
-        a.addClass("btn waves-effect waves-light btn-small blue-grey")
+        a.addClass("btn waves-effect waves-light btn-small blue-grey darken-4")
         a.attr("data-name",topics[i]);
         a.text(topics[i]);
         $("#buttonsView").append(a);
