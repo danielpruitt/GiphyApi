@@ -27,12 +27,12 @@ function displayGif(){
                 link.text("Get GIF here!");
                 link.attr("target", "blank");
                 var movieImage=$("<img>");
-                movieImage.attr("data-still",results[j].images.fixed_width_still.url);
-                movieImage.attr("data-animate",results[j].images.fixed_width.url);
-                movieImage.attr( "src", results[j].images.fixed_width_still.url);
+                movieImage.attr("data-still",results[j].images.fixed_height_still.url);
+                movieImage.attr("data-animate",results[j].images.fixed_height.url);
+                movieImage.attr( "src", results[j].images.fixed_height_still.url);
                 movieImage.attr("data-state","still");
-                movieImage.addClass("play",);
-                movieImage.addClass("card blue-grey darken-4 col s8 m8 l12 center-align ");
+                movieImage.addClass("play");
+                movieImage.addClass("card blue-grey darken-4 col s8 m8 l12 center-align z-depth-3 ");
                 gifDiv.prepend(link);
                 gifDiv.prepend(p);
                 gifDiv.prepend(movieImage);
@@ -75,6 +75,7 @@ function displayGif(){
                     gifDiv.prepend(y);
                     gifDiv.prepend(pl);
                     gifDiv.prepend(t);
+                    gifDiv.addClass("z-depth-3")
                     console.log(gifDiv)
                     $("#gifTitle").prepend(gifDiv);
 
