@@ -27,3 +27,8 @@ button{
 .movie{
     font-family: 'Aldrich', sans-serif;
 }
+
+.card {
+    width:auto;
+    height:auto
+}
