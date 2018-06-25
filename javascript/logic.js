@@ -52,7 +52,7 @@ function displayGif(){
                     $(this).attr("data-state", "still");
                 }
             })
-            var omdb = "http://www.omdbapi.com/?t=" + searchedMovie + "&apikey=93a934dc";
+            var omdb = "https://www.omdbapi.com/?t=" + searchedMovie + "&apikey=93a934dc";
             
                 $.ajax({
                 url: omdb,
