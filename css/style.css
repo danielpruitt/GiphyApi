@@ -28,3 +28,31 @@ button{
     font-family: 'Aldrich', sans-serif;
 }
 
+@media only screen and (max-width:780px){
+    .card{
+        width:340px;
+        height:auto
+    }
+    .item{
+        width:340px;
+        height:auto
+    }
+    .smallview{
+        width:340px;
+        height:auto
+    }
+}
+/* @media only screen and (max-width:375px){
+    .card{
+        width:340px;
+        height:auto
+    }
+    .item{
+        width:350px;
+        height:auto
+    }
+    .smallview{
+        width:350px;
+        height:auto
+    }
+} */
